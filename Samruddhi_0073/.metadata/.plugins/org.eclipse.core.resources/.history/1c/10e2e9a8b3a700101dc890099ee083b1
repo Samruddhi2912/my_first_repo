@@ -1,0 +1,17 @@
+package com.demo.test;
+
+import java.util.Map;
+
+import com.demo.beans.Customer;
+import com.demo.beans.Items;
+import com.demo.service.*;
+
+public class TestOrderManageSystem {
+	
+ public static void main(String[] args) {
+	 
+	 OderService oserve = new OrdrServiceImpl();
+	
+	}
+	
+}

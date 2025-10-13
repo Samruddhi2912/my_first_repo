@@ -1,0 +1,108 @@
+package com.demo.test;
+import com.demo.service.*;
+import java.util.Scanner;
+import java.util.Set;
+import com.demo.beans.*;
+import com.demo.beans.*;
+public class TestStudentManageSystem {
+    private static Object String;
+
+	public static void main(String args[]) {
+    	StudentService studservice = new StudentServiceImpl();
+    	Scanner sc = new Scanner(System.in);
+    	int choice;
+    	do {
+    		System.out.println("1. add new student\n 2. display all\n3. search by id");
+    		System.out.println("4. Search by name\n 5. update marks\n6. delete by id\n7. delete by marks\n");
+    		System.out.println("8. search by marks\n 9. sort by marks\n10. Sort By name\n 11. Sort By id\n12. exit\n choice: ");
+    		choice = sc.nextInt();
+    		switch(choice) {
+    		case 1 ->{
+    			boolean status = studservice.addNewStudent();
+    			if (status) { 
+    				System.out.println("added successfully");
+    				} 
+    			else System.out.println("not added");
+    		}
+    		case 2 ->{
+    			Set <Student> studSet = studservice.displayAll();
+    			studSet.forEach(System.out::println);
+    		}
+    		case 3 ->{
+    			System.out.println("enter student id");
+    			int id = sc.nextInt();
+    			Student s =studservice.searchById(id);
+    			if(s!=null) {
+    				System.out.println(s);
+    			}
+    			else {
+    				System.out.println("Student not found");
+    			}
+    		}
+    		case 4 ->{
+    			
+    		System.out.println("enter student name");
+			String name = sc.next();
+			Set <Student>studSet =studservice.searchByName(name);
+			if(studSet!=null) {
+				studSet.forEach(System.out::println);
+			}
+			else {
+				System.out.println("Student not found");
+			}
+			}
+    		case 5 ->{
+    			System.out.println("enter student id");
+    			int id = sc.nextInt();
+    			System.out.println("Enter marks m1");
+    			int marks = sc.nextInt();
+    			boolean status = studservice.udateMarks(id,marks);
+    			if(status) {
+    				System.out.println("updated successfully");
+    			}
+    			else {
+    				System.out.println("not found");
+    			}
+    			
+    		}
+    		case 6 ->{
+    			System.out.println("enter student id");
+    			int id = sc.nextInt();
+    			boolean status = studservice.deleteById(id);
+    			if(status) {
+    				System.out.println("deleted successfully");
+    			}
+    			else {
+    				System.out.println("not found");
+    			}
+    		}
+    		case 7 ->{
+    			System.out.println("Enter marks m1");
+			int marks = sc.nextInt();
+			boolean status = studservice.deleteByMarks(marks);
+			if(status) {
+				System.out.println("deleted successfully");
+			}
+			else {
+				System.out.println("not found");
+			}}
+    		case 8 ->{
+    			System.out.println("Enter marks m1");
+    			int marks = sc.nextInt();
+    			Set <Student> sset = studservice.searchByMarks(marks);
+    			if(sset!=null) {
+    				sset.forEach(System.out::println);
+    			}
+    			else {
+    				System.out.println("not found");
+    			}
+    		}
+    		case 9 ->{}
+    		case 10 ->{}
+    		case 11 ->{}
+    		case 12 ->{}
+    		default ->{}
+    		}
+    	}while(choice!=12);
+    }
+}

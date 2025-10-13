@@ -1,0 +1,38 @@
+package com.demo.dao;
+
+import java.util.List;
+import java.util.ArrayList;
+import java.time.*;
+import com.demo.beans.Employee;
+
+public class EmpDaoImpl implements EmpDao {
+  
+	static List<Employee> elist;
+	{
+		elist=new ArrayList<>();
+elist.add(new Employee(111,"sakshi",50000,LocalDate.of(2000, 05,26)));
+elist.add(new Employee(121,"xyz",65000,LocalDate.of(2000, 05,26)));
+elist.add(new Employee(113,"abc",75000,LocalDate.of(2000, 05,26)));
+elist.add(new Employee(112,"pqrs",40000,LocalDate.of(2000, 05,26)));
+	}
+	@Override
+	public boolean save(Employee e) {
+		elist.add(e);
+		return true;
+	}
+	@Override
+	public List<Employee> findAll() {
+		// TODO Auto-generated method stub
+		return elist;
+	}
+	@Override
+	public Employee findById(int eid) {
+		
+		int pos = elist.indexOf(new Employee(eid));
+		if(pos!=-1) {
+			return elist.get(pos);
+		}
+		
+		return null;
+	}
+}

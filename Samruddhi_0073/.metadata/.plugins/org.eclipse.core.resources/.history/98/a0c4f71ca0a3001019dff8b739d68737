@@ -1,0 +1,22 @@
+
+public class Test_Interface implements Inter1 {
+
+	@Override
+	public void m1() {
+		System.out.println("this is abstract method of an interface");
+	}
+
+	@Override
+	public int m3(int n) {
+		int fact =1;
+		
+		for(int x=1; x<=n; x++ ) {
+			fact = fact*x;
+		}
+		System.out.println("Fact of" +n+"is :"+fact);
+		return fact;
+	}
+      public static void main(String[] args) {
+		
+	}
+}

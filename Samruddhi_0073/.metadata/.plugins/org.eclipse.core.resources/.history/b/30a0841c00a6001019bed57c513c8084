@@ -1,0 +1,17 @@
+package com.demo.dao;
+
+import java.util.Set;
+
+import com.demo.beans.Student;
+
+public interface StudentDao {
+
+	boolean save(Student s);
+
+	Set<Student> findAll();
+
+	Student findById(int id);
+
+	Student findByName(String name);
+
+}

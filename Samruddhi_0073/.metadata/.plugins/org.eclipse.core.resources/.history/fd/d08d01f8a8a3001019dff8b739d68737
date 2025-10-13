@@ -1,0 +1,11 @@
+
+public class TestFunctional {
+public static void main(String[] args) {
+	FunctionalClass obj = new FunctionalClass();
+	
+	obj.m1();
+	obj.m2();
+	obj.m3();
+	obj.m4();
+}
+}

@@ -1,0 +1,22 @@
+package com.demo.service;
+import java.util.Scanner;
+public class EmpServiceImpl implements EmpService {
+
+	
+	@Override
+	public boolean addEmp() {
+	Scanner sc = new Scanner(System.in);
+	System.out.println("Enter name of employee");
+	 String name = sc.next();
+	 System.out.println("Enter emp id ");
+	 int eid = sc.nextInt();
+	 System.out.println("Enter salary of employee");
+	 double sal = sc.nextDouble();
+	 System.out.println("Enter  date of joining of employee dd/mm/yyyy");
+	 String jdt = sc.next();
+	  Employee e = new Employee(eid,name,sal,jdt );
+	
+		return false;
+	}
+
+}

@@ -1,0 +1,21 @@
+
+public class StringFunc {
+   private static String str1 = "Hello";
+   private static String str2 = "java";
+   private static String str3 = "java"; 
+   private static String str4 = "java is language";
+    	
+    
+    public static void main(String args[]) {
+    	System.out.println("str1==str2 "+ (str1==str2));
+    	System.out.println("str1 equals str2 "+ (str1.equals(str2)));
+    	System.out.println("str1 equals str2 "+ (str3.equals(str2)));
+    	System.out.println(str1.charAt(3));
+    	System.out.println(str2.toUpperCase());
+    	System.out.println(str3.startsWith("ja"));
+    	System.out.println(str3.startsWith("java is"));
+    	System.out.println(str1.endsWith("llo"));
+    	System.out.println(str2.length());
+}
+
+}

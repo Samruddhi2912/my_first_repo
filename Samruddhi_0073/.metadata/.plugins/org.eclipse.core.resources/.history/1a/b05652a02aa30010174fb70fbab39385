@@ -1,0 +1,152 @@
+import java.util.*;
+public class Array2D {
+
+	public static void acceptData(int arr[][]) {
+		Scanner sc = new Scanner(System.in);
+		for(int i=0; i<arr.length; i++) {
+			for(int j=0; j<arr[0].length;j++ ) {
+				
+				System.out.println("Enter data");
+				arr[i][j] = sc.nextInt();
+			}
+		}
+	}
+	
+	public static void displayData(int[][]arr) {
+		System.out.println("displaying data");
+		for(int i=0; i<arr.length; i++) {
+			for(int j=0; j<arr[0].length;j++ ) {
+				
+				System.out.println(arr[i][j]);
+	}
+}
+}
+	public static int addAllEle(int arr[][]) {
+		int sum =0;
+		
+		for(int i=0; i<arr.length; i++) {
+			for(int j=0; j<arr[0].length;j++ ) {
+				sum= sum + arr[i][j];		
+	}
+	}
+		return sum;
+	}
+	public static int[] rowAdd(int arr[][]) {
+		int[] rowSum = new int[arr.length];
+		int cnt=0;
+		
+		for(int i=0;i<arr.length;i++) {
+			int sum=0;
+			for(int j=0; j<arr[i].length;j++) {
+				sum = sum + arr[i][j];
+			}
+			rowSum[cnt]=sum;
+			  cnt++;
+		}
+		
+		return rowSum;
+	}
+	public static int[] columnAdd(int arr[][]) {
+		int[] colSum = new int[arr[0].length];
+		
+		for(int i=0;i<arr.length;i++) {
+			
+			for(int j=0; j<arr[i].length;j++) {
+				colSum[j]+= arr[i][j];
+			}
+		}
+		
+		return colSum;
+	}
+	
+	
+	public static int maxOfAll(int arr[][]) {
+		int max=-1;
+		for(int i=0;i<arr.length;i++) {
+			for(int j=0;j<arr[i].length;j++) {
+				if(arr[i][j] > max) {
+					max=arr[i][j];
+				}
+				
+			}
+		}
+		
+		return max;
+	}
+	
+	public static int[] maxOfRow(int arr[][]) {
+		int[] maxOfAllRows=new int[arr.length];
+		for(int i=0;i<arr.length;i++) {
+			int max=-1;
+			for(int j=0;j<arr[i].length;j++) {
+				if(arr[i][j] > max) {
+					max=arr[i][j];
+				}
+				
+			}
+			maxOfAllRows[i]=max;
+		}
+		
+		return maxOfAllRows ;
+	}
+	public static int[] maxofCols(int arr[][]) {
+		int [] maxOfAllCols= new int[arr[0].length];
+		
+		for(int i=0;i<arr.length;i++) {
+			for(int j=0;j<arr[i].length;j++) {
+				if(maxOfAllCols[j]<arr[i][j]) {
+					maxOfAllCols[j]=arr[i][j];
+				}
+			}
+		}
+		return maxOfAllCols;
+	}
+
+	public static int [][] addTwoArrays(int arr[][], int arr2[][]) {
+		int temp [][]= new int [arr.length][arr[0].length];
+		if(arr.length== arr2.length && arr[0].length==arr2[0].length) {
+		for(int i =0; i<arr.length;i++) {
+				for(int j=0;j<arr[i].length;j++) {
+		          temp[i][j]=arr[i][j]+arr2[i][j];
+			}
+			}	
+		}
+		return temp;
+	}
+
+	public static boolean isIdentity(int[][] arr) {
+		for(int i =0;i<arr.length;i++) {
+			for(int j=0;j<arr[i].length;j++) {
+				if(i==j && arr[i][j]!=1) {
+					return false;
+				}
+				else if (i!=j && arr[i][j]!=0) {
+					return false;
+				}
+			}
+		}
+		
+		return false;
+	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+}

@@ -1,0 +1,10 @@
+
+public class StringFunc {
+    String str1 = "Hello";
+    String str2 = "java";
+    
+    
+    public static void main(String args[]) {
+    	System.out.println(str1==str2);
+    }
+}

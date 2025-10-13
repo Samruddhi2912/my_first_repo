@@ -1,0 +1,38 @@
+package com.demo.test;
+
+
+import java.util.*;
+
+import com.demo.service.EmpService;
+import com.demo.service.EmpServiceImpl;
+public class TestEmpManageSys {
+
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		int choice=0;
+		EmpService eservice = new EmpServiceImpl();
+		do { System.out.println("1. add new employee\n 2. display all\n3. search by id");
+		System.out.println("4. Search by name\n 5. update sal\n6. delete by id\n7. delete by salary\n");
+		System.out.println("8. search by salary \n 9. sort by salary\n10. exit\n choice: ");
+		choice = sc.nextInt();
+		switch(choice) {
+		case 1->{
+			boolean status= eservice.addEmp();
+		}
+		}	
+			
+		
+		
+		
+		
+		
+		
+		
+		}while(choice!=10);
+		
+		
+   
+    
+	}
+
+}

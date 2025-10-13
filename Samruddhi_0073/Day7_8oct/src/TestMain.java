@@ -1,0 +1,16 @@
+
+public class TestMain {
+public static void main(String[] args) {
+	System.out.println("main");
+	Test_Interface obj = new Test_Interface();
+	obj.m1();
+	obj.m2();
+	obj.m3(4);
+	Inter1.m4();
+	obj.m1(2);
+	obj.m1(2.3f, 5.2f);
+	System.out.println("value"+obj.x);
+	
+	
+}
+}

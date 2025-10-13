@@ -1,0 +1,63 @@
+package com.demo.service;
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
+import java.util.List;
+import java.util.Scanner;
+import com.demo.dao.*;
+import com.demo.beans.*;
+import java.time.*;
+import com.demo.beans.*;
+public class EmpServiceImpl implements EmpService {
+
+	EmpDao edao = new EmpDaoImpl();
+	@Override
+	public boolean addEmp() {
+	Scanner sc = new Scanner(System.in);
+	System.out.println("Enter emp id ");
+	 int eid = sc.nextInt();
+	System.out.println("Enter name of employee");
+	 String name = sc.next();
+	 System.out.println("Enter salary of employee");
+	 double sal = sc.nextDouble();
+	 System.out.println("Enter  date of joining of employee dd/mm/yyyy");
+	 String jdt = sc.next();
+	 LocalDate ldt = LocalDate.parse(jdt,DateTimeFormatter.ofPattern("dd/MM/yyyy"));
+	  Employee e= new Employee(eid, name, sal, ldt);
+	
+		return edao.save(e);
+	}
+	@Override
+	public List<Employee> displayAll() {
+		return edao.findAll();
+	}
+	@Override
+	public Employee searchById(int eid) {
+		return edao.findById(eid);
+	}
+	@Override
+	public List<Employee> searchByName(String nm) {
+		 
+		return edao.findByName(nm);
+	}
+	@Override
+	public boolean updateSal(int id, double sal) {
+		
+		return edao.updateSal(id,sal);
+	}
+	@Override
+	public boolean deleteById(int id) {
+		   
+		return edao.removeById(id);
+	}
+	@Override
+	public boolean deleteBySal(double sal) {
+		
+		return edao.removeBySal(sal);
+	}
+	@Override
+	public List<Employee> findBySal(double sal) {
+		
+		return edao.searchBySal(sal);
+	}
+
+}

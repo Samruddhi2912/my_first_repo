@@ -1,0 +1,32 @@
+package com.demo.service;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Scanner;
+import com.demo.dao.OrderDao;
+import com.demo.dao.OrderDaoImpl;
+import com.demo.beans.*;
+
+public class OrderServiceImpl implements OrderService  {
+	private OrderDao odao;
+	
+	public OrderServiceImpl() {
+		odao = new OrderDaoImpl();
+	}
+    
+	@Override
+	public boolean addNewCustomer() {
+		Scanner sc = new Scanner(System.in);
+		System.out.println("enter id");
+		int cid = sc.nextInt();
+		System.out.println("Enter name");
+		String cname = sc.next();
+		System.out.println("enter mobile number");
+		String mob = sc.next();
+		
+		Customer c = new Customer(cid, cname, mob);
+		//accept list of items
+		List <Item> lst =new ArrayList<>();
+		return 
+	}
+
+}

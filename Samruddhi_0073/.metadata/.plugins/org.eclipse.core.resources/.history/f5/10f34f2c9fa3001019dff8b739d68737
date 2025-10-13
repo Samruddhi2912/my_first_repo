@@ -1,0 +1,20 @@
+
+public class Test_Interface implements Inter1 {
+
+	@Override
+	public void m1() {
+		int fact =1;
+		int n =4;
+		for(int x=1; x<=n; x++ ) {
+			fact = fact*x;
+		}
+		System.out.println("Fact of" +n+"is :"+fact);
+	}
+
+	@Override
+	public int m3(int x) {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+}

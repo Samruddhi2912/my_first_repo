@@ -1,0 +1,15 @@
+
+public interface FunctionalInter {
+  
+	void m1();
+	
+	default void m2() {
+		System.out.println("Default m2");
+	}
+
+	default void m3() {
+		System.out.println("Default m3");
+	}
+
+	void m4();
+}

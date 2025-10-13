@@ -1,0 +1,18 @@
+import java.lang.annotation.Annotation;
+
+public class TestFunctional {
+public static void main(String[] args) {
+	FunctionalClass obj = new FunctionalClass();
+	
+	obj.m1();
+	obj.m2();
+	obj.m3();
+	FunctionalInter obj1 = new FunctionalInter() {
+        public void m1() {
+		
+		System.out.println("");
+	}
+
+		
+};
+}}

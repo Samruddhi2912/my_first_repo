@@ -1,0 +1,21 @@
+package com.demo.dao;
+
+import java.util.HashSet;
+import java.util.Set;
+import com.demo.beans.Student;
+
+
+public class StudentDaoImpl implements StudentDao {
+
+ Set<Student> sSet = new HashSet<>();
+ sSet.add(new Student(101,"Amit",94,90,(2001, 07,11)));
+
+	
+	
+	@Override
+	public boolean save(Student s) {
+		
+		return false;
+	}
+
+}

@@ -6,7 +6,7 @@ import com.demo.beans.Employee;
 
 public interface EmployeeDao {
 
-	boolean save(Employee e);
+	booleansave(Employee e); 
 
 	List<Employee> findAll();
 

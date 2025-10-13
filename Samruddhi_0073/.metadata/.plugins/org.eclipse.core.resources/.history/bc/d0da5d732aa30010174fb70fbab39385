@@ -1,0 +1,84 @@
+import java.util.*;
+public class Test2D {
+
+	
+	public static void main(String args[]) {
+		
+		Scanner sc = new Scanner(System.in);
+//		System.out.println("Enter the number of rows");
+//		int i = sc.nextInt();
+//		System.out.println("Enter number of columns you want");
+//		int j = sc.nextInt();
+		
+		int[][] arr = {{1,0,0},{0,1,0},{0,0,1}};
+		int [][] arr2= {{1,12,3},{5,41,7},{8,49,77} };
+
+		//Array2D.acceptData(arr);
+		//Array2D.displayData(arr);
+		int choice = 0;
+		do {
+		System.out.println("1. add all numbers\n2. add rowwise\n3.columnwise addition");
+		System.out.println("4. find max of all numbers\n 5. maximum rowwise\n6. find maximum columnwise");
+		System.out.println("7. add 2 arrays\n8. multiply array\n9. find transpose of array");
+		System.out.println("10. check identity matrix\n11. rotate matrix rows\n 12. rotate matrix columns");
+		System.out.println("13. convert to 1D array\n 14. exit\nchoice : ");
+		System.out.println("Enter choice ");
+		choice = sc.nextInt();
+		switch(choice) {
+		case 1:
+			int summation = Array2D.addAllEle(arr);
+			System.out.println("Addition of all elements is :"+ summation);
+			break;
+		case 2:	
+			int[] addRow = Array2D.rowAdd(arr);
+			System.out.println("Rowwise Addition"+ Arrays.toString(addRow));
+			
+			break;
+		case 3:	
+			break;
+		case 4:	
+			int maxNum=Array2D.maxOfAll(arr);
+			System.out.println("Maximum of all elements is: "+maxNum);
+			break;
+		case 5:	
+			System.out.println("Maximum of rows:"+ Arrays.toString(Array2D.maxOfRow(arr)));
+			break;
+		case 6:	
+			System.out.println("Maximum of columnss:"+ Arrays.toString(Array2D.maxofCols(arr)));
+			break;
+		case 7:
+			int [][] a = (Array2D.addTwoArrays(arr, arr2));
+			System.out.println("Addition of two arrays:");
+					Array2D.displayData(a);
+			break;
+		case 8:	
+			break;
+		case 9:	
+			break;
+		case 10:	
+			if(Array2D.isIdentity(arr)) {
+				System.out.println("Array is not identity matrix");
+			}
+			else {
+				System.out.println("Array is identity matrix");
+			}
+			break;
+		case 11:	
+			break;
+		case 12:	
+			break;
+		case 13:	
+			break;
+		case 14:	
+			System.out.println("Thank you............");
+			break;
+		default:
+			System.out.println("Invalid choice");
+		}
+		}while(choice!=14);
+		
+		}
+	
+		
+	}
+

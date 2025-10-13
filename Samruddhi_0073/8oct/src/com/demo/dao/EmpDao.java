@@ -1,0 +1,25 @@
+package com.demo.dao;
+
+import java.util.List;
+
+import com.demo.beans.Employee;
+
+public interface EmpDao {
+
+   boolean save(Employee e);
+
+List<Employee> findAll();
+
+Employee findById(int eid);
+
+List<Employee> findByName(String nm);
+
+boolean updateSal(int id, double sal);
+
+boolean removeById(int id);
+
+boolean removeBySal(double sal);
+
+List<Employee> searchBySal(double sal);
+
+}

@@ -1,0 +1,30 @@
+package com.demo.dao;
+
+import java.time.LocalDate;
+import java.util.HashSet;
+import java.util.Set;
+import com.demo.beans.Student;
+
+
+public class StudentDaoImpl implements StudentDao {
+
+ static Set<Student> sSet;
+ static{
+	 sSet=new HashSet<>();
+ sSet.add(new Student(101,"Amit",94, 90,LocalDate.of(2001,07,11)));
+ sSet.add(new Student(102,"abc",57,88,LocalDate.of(2003, 02, 10)));
+ sSet.add(new Student(103,"xyz",57,88,LocalDate.of(2003, 12, 01)));
+ sSet.add(new Student(104,"abc",57,88,LocalDate.of(2003, 08, 11)));
+ sSet.add(new Student(105,"pqr",57,88,LocalDate.of(2003, 03, 10)));
+	
+ }
+	@Override
+	public boolean save(Student s) {
+		return sSet.add(s);	
+	}
+	@Override
+	public Set<Student> findAll() {
+		return sSet;
+	}
+
+}

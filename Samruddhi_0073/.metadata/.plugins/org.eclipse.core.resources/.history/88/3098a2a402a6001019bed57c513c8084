@@ -1,0 +1,51 @@
+package com.demo.service;
+
+import java.util.*;
+import com.demo.service.*;
+import com.demo.dao.*;
+import com.demo.beans.Student;
+import java.time.*;
+import java.time.format.DateTimeFormatter;
+
+public class StudentServiceImpl implements StudentService{
+	StudentDao sdao = new StudentDaoImpl();
+	Scanner sc = new Scanner(System.in);
+
+	@Override
+	public boolean addNewStudent() {
+		System.out.println("Enter student id");
+		int id = sc.nextInt();
+		System.out.println("enter student name");
+		String name= sc.next();
+		System.out.println("enter marks m1");
+		int m1 = sc.nextInt();
+		System.out.println("enter marks m2");
+		int m2 = sc.nextInt();
+		System.out.println("enter birth date in the form of dd/mm/yyyy");
+		String bdate = sc.next();
+		LocalDate bdt =LocalDate.parse(bdate, DateTimeFormatter.ofPattern("dd/MM/yyyy"));
+		Student s = new Student(id, name, m1, m2,bdt);
+		return sdao.save(s);
+	}
+
+	@Override
+	public Set<Student> displayAll() {
+		return sdao.findAll();
+	}
+
+	@Override
+	public Student searchById(int id) {
+		return sdao.findById(id);
+	}
+
+	@Override
+	public Set<Student> searchByName(String name) {
+		return sdao.findByName(name);
+	}
+
+	@Override
+	public boolean udateMarks(int marks) {	
+		return sdao.changeMarks(marks);
+	}
+
+}
